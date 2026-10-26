@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portfolio – Gestion de réseaux et sécurité</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f1f4f8;--surface:#fff;--ink:#172033;--mute:#55627a;--line:#d3dbe6;--acc:#2457d6;--warn:#c9741a;--ok:#1f8a5b;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101826;--surface:#182234;--ink:#e8edf6;--mute:#9aa8c0;--line:#2b3850;--acc:#7da2ff;--warn:#f0a35a;--ok:#4fc994;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#101826;--surface:#182234;--ink:#e8edf6;--mute:#9aa8c0;--line:#2b3850;--acc:#7da2ff;--warn:#f0a35a;--ok:#4fc994;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 "IBM Plex Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","IBM Plex Sans",sans-serif;line-height:1.1;margin:0}
+a{color:var(--acc)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.25rem}
+nav{display:flex;gap:1.4rem;flex-wrap:wrap;padding:1.2rem 0;font-weight:500}
+nav a{color:var(--mute);text-decoration:none}nav a:hover{color:var(--acc)}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:2rem;align-items:center;padding:2.5rem 0 4rem}
+.hero h1{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:800;letter-spacing:-.02em}
+.hero p{max-width:34rem;color:var(--mute);margin:1.2rem 0 1.8rem}
+.btn{display:inline-block;padding:.8rem 1.4rem;border-radius:8px;background:var(--acc);color:#fff;text-decoration:none;font-weight:500;margin-right:.6rem}
+.btn.alt{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.topo{width:100%;height:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.topo .l{stroke:var(--line);stroke-width:2;fill:none}
+.topo .n{fill:var(--surface);stroke:var(--ink);stroke-width:2}
+.topo text{fill:var(--mute);font:500 11px "IBM Plex Sans",sans-serif}
+.pkt{fill:var(--acc)}
+.bad{fill:var(--warn)}
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(1.7rem,3.5vw,2.4rem);margin-bottom:1.6rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1.4rem}
+.card h3{font-size:1.2rem;margin-bottom:.5rem}
+.card p{margin:.4rem 0;color:var(--mute);font-size:.98rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.8rem}
+.tags span{font-size:.82rem;padding:.15rem .6rem;border-radius:99px;border:1px solid var(--line);color:var(--mute)}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem}
+.skills h3{font-size:1.05rem;color:var(--acc);margin-bottom:.6rem}
+.skills ul{margin:0;padding:0;list-style:none}
+.skills li{padding:.35rem 0;border-bottom:1px solid var(--line)}
+.tl{list-style:none;margin:0;padding:0 0 0 1.4rem;border-left:2px solid var(--acc)}
+.tl li{position:relative;padding-bottom:1.6rem}
+.tl li::before{content:"";position:absolute;left:-1.95rem;top:.5rem;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--acc)}
+.tl b{font-family:"Bricolage Grotesque",sans-serif;font-size:1.1rem}
+.tl small{display:block;color:var(--mute)}
+.note{color:var(--mute);font-size:.9rem}
+footer{padding:2.5rem 0 3rem;border-top:1px solid var(--line);color:var(--mute)}
+@media (max-width:760px){.hero{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.pkt animateMotion{display:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Navigation principale"><a href="#apropos">À propos</a><a href="#competences">Compétences</a><a href="#projets">Projets</a><a href="#parcours">Parcours</a><a href="#contact">Contact</a></nav>
+
+<header class="hero">
+<div>
+<h1>Prénom Nom</h1>
+<p>Étudiant(e) en gestion de réseaux et sécurité. Je conçois, configure et protège des infrastructures réseau, de la segmentation VLAN à la détection d’intrusions.</p>
+<a class="btn" href="#projets">Voir mes projets</a><a class="btn alt" href="#contact">Me contacter</a>
+</div>
+<svg class="topo" viewBox="0 0 400 300" role="img" aria-label="Schéma réseau : un paquet circule d’un poste vers le serveur en passant par un pare-feu">
+<path id="p" class="l" d="M50 150 H140 M140 150 H260 M260 150 L350 70 M260 150 L350 230"/>
+<g class="n"><circle cx="50" cy="150" r="20"/><rect x="120" y="130" width="40" height="40" rx="6"/><rect x="240" y="130" width="40" height="40" rx="6"/><circle cx="350" cy="70" r="20"/><circle cx="350" cy="230" r="20"/></g>
+<path d="M140 138 v24 M130 150 h20" stroke="var(--warn)" stroke-width="3"/>
+<text x="30" y="190">Poste</text><text x="112" y="116">Pare-feu</text><text x="236" y="116">Routeur</text><text x="322" y="108">Serveur</text><text x="326" y="270">DMZ</text>
+<circle class="pkt" r="6"><animateMotion dur="5s" repeatCount="indefinite" path="M50 150 H260 L350 70"/></circle>
+<circle class="bad" r="5"><animateMotion dur="5s" begin="1s" repeatCount="indefinite" path="M50 150 H125"/></circle>
+</svg>
+</header>
+
+<section id="apropos">
+<h2>À propos</h2>
+<p style="max-width:42rem">Je suis actuellement en formation en gestion de réseaux et sécurité. J’aime comprendre comment les données circulent, repérer ce qui peut mal tourner et mettre en place des protections concrètes. Je recherche un stage ou une alternance en administration réseau ou en cybersécurité.</p>
+<p class="note">Remplacez ce texte par votre propre présentation : votre école, votre année, ce qui vous motive.</p>
+</section>
+
+<section id="competences">
+<h2>Compétences</h2>
+<div class="skills">
+<div><h3>Réseaux</h3><ul><li>TCP/IP, adressage et sous-réseaux</li><li>VLAN, trunking, STP</li><li>Routage OSPF, statique</li><li>DHCP, DNS, NAT</li></ul></div>
+<div><h3>Sécurité</h3><ul><li>Pare-feu (pfSense, iptables)</li><li>VPN IPsec et OpenVPN</li><li>Durcissement Linux et Windows</li><li>Tests d’intrusion de base</li></ul></div>
+<div><h3>Supervision</h3><ul><li>Wireshark, tcpdump</li><li>Zabbix, Nagios</li><li>Wazuh, journaux système</li></ul></div>
+<div><h3>Outils</h3><ul><li>Cisco Packet Tracer, GNS3</li><li>Linux, Bash, PowerShell</li><li>VirtualBox, VMware</li><li>Python pour l’automatisation</li></ul></div>
+</div>
+</section>
+
+<section id="projets">
+<h2>Projets</h2>
+<div class="grid">
+<article class="card"><h3>Réseau d’entreprise segmenté</h3><p>Conception d’un réseau multi-sites avec VLAN par service, routage inter-VLAN et listes de contrôle d’accès.</p><p>Résultat : trafic isolé entre les services, administration centralisée.</p><div class="tags"><span>Packet Tracer</span><span>VLAN</span><span>OSPF</span><span>ACL</span></div></article>
+<article class="card"><h3>Pare-feu et VPN avec pfSense</h3><p>Déploiement d’un pare-feu avec DMZ, règles de filtrage et accès distant par VPN pour les télétravailleurs.</p><p>Résultat : accès au serveur interne chiffré, services publics isolés.</p><div class="tags"><span>pfSense</span><span>OpenVPN</span><span>DMZ</span></div></article>
+<article class="card"><h3>Supervision et détection d’intrusions</h3><p>Mise en place de Wazuh et Zabbix pour surveiller les serveurs, centraliser les journaux et alerter en cas d’anomalie.</p><p>Résultat : alertes en temps réel sur les connexions suspectes.</p><div class="tags"><span>Wazuh</span><span>Zabbix</span><span>Linux</span></div></article>
+</div>
+<p class="note">Projets d’exemple : remplacez-les par vos vrais travaux, avec un lien vers vos rapports ou dépôts GitHub.</p>
+</section>
+
+<section id="parcours">
+<h2>Parcours</h2>
+<ol class="tl">
+<li><b>Formation en gestion de réseaux et sécurité</b><small>2024 – en cours · Nom de l’établissement</small>Réseaux, systèmes, cybersécurité, projets en laboratoire.</li>
+<li><b>Stage en administration réseau</b><small>2025 · Nom de l’entreprise</small>Support utilisateurs, configuration d’équipements, documentation.</li>
+<li><b>Baccalauréat</b><small>2024 · Série ou filière</small></li>
+</ol>
+<h3 style="margin:1.5rem 0 .6rem;font-size:1.2rem">Certifications visées</h3>
+<div class="tags"><span>Cisco CCNA</span><span>CompTIA Security+</span><span>Fortinet NSE 1</span></div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<p>Un stage, un projet, une question ? Écrivez-moi.</p>
+<a class="btn" href="mailto:prenom.nom@exemple.com">prenom.nom@exemple.com</a><a class="btn alt" href="#">LinkedIn</a><a class="btn alt" href="#">GitHub</a>
+</section>
+</div>
+<footer><div class="wrap">© 2026 Prénom Nom</div></footer>
+</body>
+</html>
